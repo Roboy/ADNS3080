@@ -45,8 +45,8 @@ SPISettings spiSettings(2e6, MSBFIRST, SPI_MODE3); // 2 MHz, mode 3
 // Id returned by ADNS3080_PRODUCT_ID register
 #define ADNS3080_PRODUCT_ID_VALUE      0x17
 
-static const uint8_t RESET_PIN = 9;
-static const uint8_t SS_PIN = SS; // Pin 10
+static const uint8_t RESET_PIN = 12;
+static const uint8_t SS_PIN = 11; // Pin 10
 
 static int32_t x, y;
 
@@ -197,4 +197,3 @@ void spiRead(uint8_t reg, uint8_t *data, uint8_t length) {
   digitalWrite(SS_PIN, HIGH);
   SPI.endTransaction();
 }
-
